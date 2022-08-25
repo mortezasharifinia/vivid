@@ -5,6 +5,7 @@ import { Container } from './styled';
 function SimpleButton (props: SimpleButtonProps) {
   return (
     <Container>
+      Test
     </Container>
   )
 }

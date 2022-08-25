@@ -1,2 +1,0 @@
-# vivid
-Vivid UI components

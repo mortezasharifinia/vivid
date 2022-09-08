@@ -6,7 +6,8 @@ function GlowingButton (props: GlowingButtonProps) {
   return (
     <Container 
       {...props}
-      onClick={() => props.handleClick()}>
+      onClick={() => props.handleClick()}
+      disabled={props.disabled}>
       <span>{ props.text }</span>
       <i></i>
     </Container>
@@ -15,6 +16,7 @@ function GlowingButton (props: GlowingButtonProps) {
 
 GlowingButton.defaultProps = {
   text: 'Glowing Button',
+  disabled: false,
   bgColor: '#444',
   changedBgColor: '#ff1867',
   color: '#fff',

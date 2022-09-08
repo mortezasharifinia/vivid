@@ -6,6 +6,13 @@ import SwipeButton from '../../components/buttons/swipe/SwipeButton';
 export default {
   title: 'Example/Buttons/Swipe',
   component: SwipeButton,
+  decorators: [
+    (Story) => (
+      <div style={{ width: '100%', minHeight: '90vh', display: 'flex', justifyContent: 'center', alignItems: 'center', background: '#28272a' }}>
+        <Story />
+      </div>
+    )
+  ],
   argTypes: {
     text: {
       name: 'text',
@@ -31,6 +38,19 @@ export default {
       },
       control: {
         type: 'text'
+      }
+    },
+    disabled: {
+      name: 'disabled',
+      type: { name: 'boolean' },
+      defaultValue: false,
+      description: 'Set disabled status of the button',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+      control: {
+        type: 'boolean'
       }
     },
     handleClick: {
@@ -132,6 +152,19 @@ export default {
       table: {
         type: { summary: 'string' },
         defaultValue: { summary: '#04fe4d' },
+      },
+      control: {
+        type: 'color'
+      }
+    },
+    disabledSwipeBgColor: {
+      name: 'disabledSwipeBgColor',
+      type: { name: 'string' },
+      defaultValue: '#ff5733',
+      description: 'Set color of the swipe when the button is disabled',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: { summary: '#ff5733' },
       },
       control: {
         type: 'color'

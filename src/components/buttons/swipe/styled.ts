@@ -18,6 +18,7 @@ export const Container = styled.button<StyledSwipeButtonProps>`
   padding-right: 0;
   overflow: hidden;
   transition: 0.5s;
+  cursor: pointer;
   &:after {
     content: "";
     position: absolute;
@@ -29,7 +30,7 @@ export const Container = styled.button<StyledSwipeButtonProps>`
     z-index: 1;
     transition: 0.8s ease-in-out
   }
-  :hover {
+  :active {
     color: rgba(255, 255, 255, 1);
     padding-left: 0;
     padding-right: ${props => props.height};
@@ -38,6 +39,19 @@ export const Container = styled.button<StyledSwipeButtonProps>`
     }
     span {
       left: calc(101% - ${props => props.height});
+    }
+  }
+  :disabled {
+    cursor: not-allowed;
+    color: rgba(255, 255, 255, 0.5);
+    padding-left: ${props => props.height};
+    padding-right: 0;
+    &:after {
+      transform: translate(200%, -50%) skewX(30deg);
+    }
+    span {
+      left: 5px;
+      background: ${props => props.disabledSwipeBgColor};
     }
   }
   span {

@@ -6,6 +6,13 @@ import GlowingButton from '../../components/buttons/glowing/GlowingButton';
 export default {
   title: 'Example/Buttons/Glowing',
   component: GlowingButton,
+  decorators: [
+    (Story) => (
+      <div style={{ width: '100%', minHeight: '90vh', display: 'flex', justifyContent: 'center', alignItems: 'center', background: '#27282c' }}>
+        <Story />
+      </div>
+    )
+  ],
   argTypes: {
     text: {
       name: 'text',
@@ -18,6 +25,19 @@ export default {
       },
       control: {
         type: 'text'
+      }
+    },
+    disabled: {
+      name: 'disabled',
+      type: { name: 'boolean' },
+      defaultValue: false,
+      description: 'Set disabled status of the button',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+      control: {
+        type: 'boolean'
       }
     },
     handleClick: {

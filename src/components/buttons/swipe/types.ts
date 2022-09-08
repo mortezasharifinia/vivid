@@ -3,6 +3,8 @@ export type SwipeButtonProps = {
   text: string;
   // icon of the swipe
   icon?: string;
+  // when the button is disabled
+  disabled?: boolean;
   // Callback fired when click on the button.
   handleClick: () => void;
 };
@@ -18,6 +20,8 @@ export type StyledSwipeButtonProps = {
   color?: string;
   // background color of the swipe
   swipeBgColor?: string;
+  // background color of the swipe when the button is disabled
+  disabledSwipeBgColor?: string;
   // icon color of the swipe
   swipeIconColor?: string;
   // letter spacing of the text button

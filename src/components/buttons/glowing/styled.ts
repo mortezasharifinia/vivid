@@ -18,6 +18,7 @@ export const Container = styled.button<StyledGlowingButtonProps>`
   font-weight: 400;
   padding: 10px 30px;
   transition: 0.5s;
+  cursor: pointer;
   :hover {
     color: ${props => props.changedBgColor};
     background: ${props => props.changedBgColor};
@@ -32,6 +33,23 @@ export const Container = styled.button<StyledGlowingButtonProps>`
       left: 100%;
       transform: translateX(-50%) rotate(45deg);
       border: 2px solid ${props => props.changedBgColor};
+    }
+  }
+  :disabled {
+    cursor: not-allowed;
+    :hover {
+      background: ${props => props.color};
+      box-shadow: 0 0 35px ${props => props.color};
+    }
+    i:before {
+      left: 100%;
+      transform: translateX(-50%);
+      border: 2px solid ${props => props.color};
+    }
+    i:after {
+      left: 0%;
+      transform: translateX(-50%);
+      border: 2px solid ${props => props.color};
     }
   }
   &:before {

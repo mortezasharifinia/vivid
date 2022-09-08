@@ -1,6 +1,8 @@
 export type GlowingButtonProps = {
   // text of the button
   text: string;
+  // when the button is disabled
+  disabled?: boolean;
   // Callback fired when click on the button.
   handleClick: () => void;
 };
